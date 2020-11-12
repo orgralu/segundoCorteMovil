@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title  class="ion-text-center">Registrate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <img class="icon" src="../../../assets/Imagen1.png" alt="">
+  <ion-item>
+    <ion-label position="floating"> Nombre Completo</ion-label>
+    <ion-input type="text" name="nombre" [(ngModel)]="usuario.nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> Cedula</ion-label>
+    <ion-input type="text" name="cedula" [(ngModel)]="usuario.cedula"></ion-input>
+  </ion-item>
+  <!--<ion-item>
+    <ion-label position="floating"> EPS</ion-label>
+    <ion-input type="text" name="eps" [(ngModel)]="usuario.eps"></ion-input>
+  </ion-item>-->
+  <ion-item>
+    <ion-label position="floating">EPS</ion-label>
+    <ion-select  name="eps" multiple="false" [(ngModel)]="usuario.eps">
+      <ion-select-option value="Asmet Salud E.P.S.">Asmet Salud E.P.S.</ion-select-option>
+      <ion-select-option value="E.P.S. Famisanar">E.P.S. Famisanar</ion-select-option>
+      <ion-select-option value="Eps Humanavivir">Eps Humanavivir</ion-select-option>
+      <ion-select-option value="Saludvida S.A. Eps">Saludvida S.A. Eps</ion-select-option>
+      <ion-select-option value="Solsalud E.P.S">Solsalud E.P.S</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> Usuario</ion-label>
+    <ion-input type="text" name="usuario" [(ngModel)]="usuario.usuario"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> Contraseña</ion-label>
+    <ion-input type="password" name="password" [(ngModel)]="usuario.contrasena"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button expand="block" color="success" (click)="saveUsuario()">Registrar</ion-button>
+  <h6 class="ion-text-center"><a href="/login">Ya tengo cuenta</a></h6>
+</ion-content>

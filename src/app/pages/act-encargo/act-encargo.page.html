@@ -1,0 +1,26 @@
+<ion-content>
+  <h2 class="ion-text-center">Datos</h2>
+  <ion-list lines="full">
+      <ion-item *ngIf="encargo">
+        <ion-label position="floating">Descripcion</ion-label>
+        <ion-input required type="text" [(ngModel)]="encargo.descripcion">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="encargo">
+        <ion-label position="floating">Direccion</ion-label>
+        <ion-input required type="text" [(ngModel)]="encargo.direccion">
+        </ion-input>
+      </ion-item>
+  </ion-list>
+  <ion-button expand="full" color="success" (click)="saveEncargo()">Actualizar</ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+    <ion-fab-button color="danger" routerLink="/usuario" routerDirection="forward" (click)="onRemove(usuarioId)">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" slot="fixed" color="danger">
+    <ion-fab-button color="primary" routerLink="/usuario" routerDirection="forward">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

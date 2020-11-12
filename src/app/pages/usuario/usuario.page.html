@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+      Encargos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let encargo of encargo">
+      <div *ngIf="IdUsuario == encargo.idUsuario">
+        <ion-item lines="inset" button [routerLink]="['/act-encargo', encargo.id]">
+          <ion-label>
+            {{encargo.descripcion}}
+          </ion-label>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option  color="secondary">
+            <ion-icon name="checkmark" slot="end"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </div>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openModal()" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" slot="fixed" color="danger">
+    <ion-fab-button (click)="deleteCok()" color="primary" routerLink="/" routerDirection="forward">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
